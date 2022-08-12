@@ -19,7 +19,7 @@
     <details>
     <summary>package.json</summary>
 
-    ```js
+    ```json
     {
       "name": "fake-server",
       "version": "1.0.0",
@@ -75,7 +75,7 @@
   <details>
   <summary>db.json</summary>
 
-    ```json
+  ```json
       {
       "users": [
         {
@@ -101,7 +101,7 @@
         }
       ]
     }
-    ```
+  ```
   </details>
 
 2. push db.json file to github
@@ -143,30 +143,30 @@
 	- делаем Manual deploy и ждём сообщения ниже на странице: Your app was successfully deployed.
 
 ## **5. Отладка**
-  - согласно инструкции надо [скачать heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
-  - `heroku login` - залогинимся и можно работать
+- согласно инструкции надо [скачать heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
+- `heroku login` - залогинимся и можно работать
 
 1. [Полезное](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true#declare-app-dependencies)
-
-  - `git --version`
-  - `npm --version`
-  - `node --version`
+    - `git --version`
+    - `npm --version`
+    - `node --version`
 
 2. посмотреть логи по нашему приложению:
-  - `heroku logs --tail --app fake-server-2022`
+    - `heroku logs --tail --app fake-server-2022`
 
 3. Наш app работает в контейнере Dyno и может уснуть. Проверим его статус:
-  - `heroku ps --app fake-server-2022`
-  - По умолчанию ваше приложение развертывается на бесплатном динамометрическом стенде. Бесплатные динамометры засыпают через полчаса бездействия (если они не получают никакого трафика).
+    - `heroku ps --app fake-server-2022`
+    - По умолчанию ваше приложение развертывается на бесплатном динамометрическом стенде. Бесплатные динамометры засыпают через полчаса бездействия (если они не получают никакого трафика).
 
 4. Как запустить или вырубить использование Dyno-контейнера:
-  - `heroku ps:scale web=1 --app fake-server-2022` - стартануть
-  - `heroku ps:scale web=0 --app fake-server-2022` - остановить
+    - `heroku ps:scale web=1 --app fake-server-2022` - стартануть
+    - `heroku ps:scale web=0 --app fake-server-2022` - остановить
 
 5. Зайти в консоль контейнера нашего приложения
-  - `heroku run bash --app fake-server-2022`
+    - `heroku run bash --app fake-server-2022`
 
 6. Запустить своё приложение локально (средствами Heroku CLI):
-  - `heroku local web`
-  - надо находиться в папке с файлами
-  - heroku пофиг на ваш порт, так что адрес будет http://localhost:5000
+    - `heroku local web`
+    - надо находиться в папке с файлами
+    - heroku пофиг на ваш порт, так что адрес будет http://localhost:5000
+    
